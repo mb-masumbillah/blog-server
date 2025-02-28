@@ -21,27 +21,27 @@ async function main() {
 
 main();
 
-// // ✅ **Synchronous Error (যেমন: console.log(x)) ধরার জন্য**
-// process.on('uncaughtException', () => {
-//   console.log('😡 uncaughtException is detected. shutting down ........');
-//   process.exit(1);
-// });
+// ✅ **Synchronous Error (যেমন: console.log(x)) ধরার জন্য**
+process.on('uncaughtException', () => {
+  console.log('😡 uncaughtException is detected. shutting down ........');
+  process.exit(1);
+});
 
-// // ✅ **Asynchronous Error ধরার জন্য**
-// process.on('unhandledRejection', () => {
-//   console.log('😡 unhandledRejection is detected. shutting down ........');
-//   if (server) {
-//     server.close(() => {
-//       process.exit(1);
-//     });
-//   } else {
-//     process.exit(1);
-//   }
-// });
+// ✅ **Asynchronous Error ধরার জন্য**
+process.on('unhandledRejection', () => {
+  console.log('😡 unhandledRejection is detected. shutting down ........');
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  } else {
+    process.exit(1);
+  }
+});
 
-// // ✅ **ম্যানুয়ালি সার্ভার বন্ধ করতে (Ctrl + C এর মতো কাজ করবে)**
-// process.on('SIGINT', () => {
-//   console.log('😡 SIGINT received. Closing server...');
-//   process.stdout.write('💀 Server closed!\n');
-//   process.exit(0);
-// });
+// ✅ **ম্যানুয়ালি সার্ভার বন্ধ করতে (Ctrl + C এর মতো কাজ করবে)**
+process.on('SIGINT', () => {
+  console.log('😡 SIGINT received. Closing server...');
+  process.stdout.write('💀 Server closed!\n');
+  process.exit(0);
+});
