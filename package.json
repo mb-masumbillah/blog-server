@@ -1,7 +1,7 @@
 {
   "name": "blog-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
@@ -10,7 +10,7 @@
     "lint:problem": "npx eslint",
     "lint:fix": "npx eslint --fix",
     "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
-    "prettier:fix": "npx prettier --write",
+    "prettier:fix": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -31,9 +31,12 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/connect": "^3.4.38",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/http-errors": "^2.0.4",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/mime": "^3.0.4",
     "@types/node": "^22.13.5",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
     "@typescript-eslint/parser": "^8.24.1",
