@@ -21,7 +21,7 @@ const RegisterUserIntoDB = (payload) => __awaiter(void 0, void 0, void 0, functi
     if (isExistingUser) {
         throw new AppError_1.default(http_status_codes_1.StatusCodes.CONFLICT, 'User with this email already exists');
     }
-    const result = yield user_model_1.User.create(payload);
+    const result = yield user_model_1.User.create(Object.assign(Object.assign({}, payload), { role: 'user', isBlocked: false }));
     return result;
 });
 exports.UserService = {

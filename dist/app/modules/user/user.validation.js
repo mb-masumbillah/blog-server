@@ -14,8 +14,6 @@ const userValidationSchema = zod_1.z.object({
             .string()
             .min(6, 'Password must be at least 6 characters')
             .max(20, 'Password must not exceed 20 characters'),
-        role: zod_1.z.enum(['admin', 'user']),
-        isBlocked: zod_1.z.boolean().default(false),
     }),
 });
 exports.userValidation = {

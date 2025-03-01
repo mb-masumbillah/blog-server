@@ -11,7 +11,11 @@ const RegisterUserIntoDB = async (payload: IUser) => {
       'User with this email already exists',
     );
   }
-  const result = await User.create(payload);
+  const result = await User.create({
+    ...payload,
+    role: 'user',
+    isBlocked: false,
+  });
   return result;
 };
 
