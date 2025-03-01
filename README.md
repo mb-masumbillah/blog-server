@@ -83,7 +83,8 @@ The API provides structured error responses to ensure meaningful feedback for us
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/b4-assignment-3.git
-   cd b4-assignment-3
-   ```
+
+```bash
+git clone https://github.com/mb-masumbillah/blog-server.git
+cd blog-server
+```
